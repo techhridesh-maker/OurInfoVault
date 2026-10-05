@@ -1,0 +1,209 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account - OurInfoVault</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="logo">
+
+        <div class="logo-icon">
+            🔐
+        </div>
+
+        <div>
+            <h2>OurInfoVault</h2>
+            <span>Create your account</span>
+        </div>
+
+    </div>
+
+</header>
+
+
+<main class="hero">
+
+    <div class="hero-text">
+
+        <div class="badge">
+            ✦ Create your vault
+        </div>
+
+        <h1>
+            Create
+            <span>Account.</span>
+        </h1>
+
+        <p>
+            Create a demo account to access
+            your OurInfoVault profile.
+        </p>
+
+    </div>
+
+
+    <div class="vault-card">
+
+        <div class="card-top">
+            <span>NEW ACCOUNT</span>
+            <span class="online">●</span>
+        </div>
+
+
+        <div class="vault-icon">
+            👤
+        </div>
+
+
+        <h2>
+            Create Account
+        </h2>
+
+
+        <form onsubmit="createAccount(event)">
+
+            <input
+                id="username"
+                type="text"
+                placeholder="Username"
+                required
+            >
+
+            <input
+                id="password"
+                type="password"
+                placeholder="Password"
+                required
+            >
+
+            <input
+                id="confirmPassword"
+                type="password"
+                placeholder="Confirm Password"
+                required
+            >
+
+            <button
+                type="submit"
+                class="primary"
+                style="width:100%; margin-top:10px;"
+            >
+                Create Account
+            </button>
+
+        </form>
+
+
+        <p
+            id="message"
+            style="margin-top:15px; text-align:center;"
+        ></p>
+
+
+        <button
+            class="secondary"
+            onclick="goLogin()"
+            style="width:100%; margin-top:10px;"
+        >
+            Already have an account? Login
+        </button>
+
+    </div>
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 OurInfoVault • Demo Version
+    </p>
+
+</footer>
+
+
+<script>
+
+function createAccount(event) {
+
+    event.preventDefault();
+
+
+    const username =
+        document.getElementById("username").value.trim();
+
+    const password =
+        document.getElementById("password").value;
+
+    const confirmPassword =
+        document.getElementById("confirmPassword").value;
+
+
+    const message =
+        document.getElementById("message");
+
+
+    if (password !== confirmPassword) {
+
+        message.textContent =
+            "❌ Passwords do not match.";
+
+        message.style.color =
+            "#f87171";
+
+        return;
+
+    }
+
+
+    localStorage.setItem(
+        "ourInfoUser",
+        username
+    );
+
+
+    localStorage.setItem(
+        "ourInfoPassword",
+        password
+    );
+
+
+    message.textContent =
+        "✅ Account created successfully!";
+
+
+    message.style.color =
+        "#4ade80";
+
+
+    setTimeout(function() {
+
+        window.location.href =
+            "index.html";
+
+    }, 1000);
+
+}
+
+
+function goLogin() {
+
+    window.location.href =
+        "index.html";
+
+}
+
+</script>
+
+</body>
+</html>
+```

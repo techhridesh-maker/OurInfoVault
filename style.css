@@ -1,0 +1,241 @@
+```css
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+
+    background:
+        radial-gradient(circle at 10% 20%, #172554 0%, transparent 30%),
+        radial-gradient(circle at 90% 80%, #312e81 0%, transparent 30%),
+        #070b16;
+
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar {
+    width: 100%;
+    padding: 22px 6%;
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+
+    background: rgba(7,11,22,0.70);
+    backdrop-filter: blur(14px);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.logo-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #111c38;
+    border: 1px solid #263452;
+    border-radius: 14px;
+
+    font-size: 23px;
+}
+
+.logo h2 {
+    font-size: 21px;
+}
+
+.logo span {
+    display: block;
+    margin-top: 3px;
+
+    color: #8f9bb5;
+    font-size: 12px;
+}
+
+
+/* =========================
+   HOMEPAGE
+========================= */
+
+.hero {
+    width: 100%;
+    max-width: 1250px;
+
+    min-height: calc(100vh - 145px);
+
+    margin: 0 auto;
+    padding: 80px 45px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 120px;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 620px;
+}
+
+.badge {
+    display: inline-block;
+
+    padding: 9px 15px;
+    margin-bottom: 24px;
+
+    border: 1px solid rgba(96,165,250,0.25);
+    border-radius: 50px;
+
+    background: rgba(37,99,235,0.08);
+
+    color: #93c5fd;
+    font-size: 13px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 6vw, 72px);
+
+    line-height: 1.05;
+    letter-spacing: -2px;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #60a5fa;
+}
+
+.hero-text > p {
+    max-width: 520px;
+
+    color: #aab6ce;
+
+    font-size: 18px;
+    line-height: 1.7;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+
+    padding: 14px 25px;
+
+    border-radius: 12px;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+}
+
+.primary {
+    background: linear-gradient(135deg, #2563eb, #4f46e5);
+    color: #ffffff;
+
+    box-shadow:
+        0 10px 30px rgba(37,99,235,0.20);
+}
+
+.primary:hover {
+    box-shadow:
+        0 15px 35px rgba(37,99,235,0.35);
+}
+
+.secondary {
+    background: #111a30;
+    color: #dbeafe;
+
+    border: 1px solid #293856;
+}
+
+
+/* =========================
+   INSTAGRAM
+========================= */
+
+.instagram-link {
+    margin-top: 20px;
+
+    font-size: 14px;
+    color: #aeb9d4;
+}
+
+.instagram-link a {
+    color: #e879f9;
+
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.instagram-link a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   VAULT CARD
+========================= */
+
+.vault-card {
+    width: 390px;
+    min-width: 390px;
+
+    padding: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(30,41,75,0.95),
+            rgba(10,16,32,0.95)
+        );
+
+    border: 1px solid rgba(148,163,184,0.16);
+    border-radius: 25px;
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,0.45),
+        0 0 50px rgba(37,99,235,0.12);
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+
+    color: #71809f;
+
+    font-size: 11px;
+    letter-spacing: 2px;
+
+    marg
+```

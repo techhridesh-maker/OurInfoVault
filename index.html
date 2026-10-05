@@ -1,0 +1,251 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>OurInfoVault</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="logo">
+
+        <div class="logo-icon">
+            🔐
+        </div>
+
+        <div>
+            <h2>OurInfoVault</h2>
+            <span>Personal Information Vault</span>
+        </div>
+
+    </div>
+
+</header>
+
+
+<main class="hero">
+
+    <div class="hero-text">
+
+        <div class="badge">
+            ✦ Simple • Organized • Private
+        </div>
+
+        <h1>
+            Your Information,
+            <span>One Place.</span>
+        </h1>
+
+        <p>
+            Organize your profile information
+            in a clean and simple dashboard.
+        </p>
+
+
+        <div class="buttons">
+
+            <button class="primary" onclick="openLogin()">
+                🔐 Login
+            </button>
+
+            <button class="secondary" onclick="openRegister()">
+                Create Account
+            </button>
+
+        </div>
+
+
+        <div class="instagram-link">
+
+            📸
+
+            <a
+                href="https://www.instagram.com/techhridesh/?hl=en"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                @techhridesh
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="vault-card">
+
+        <div class="card-top">
+
+            <span>OURINFOVAULT</span>
+
+            <span class="online">
+                ●
+            </span>
+
+        </div>
+
+
+        <div class="vault-icon">
+            🔐
+        </div>
+
+
+        <h2>
+            Information Vault
+        </h2>
+
+
+        <p>
+            Login with your account to access
+            your profile.
+        </p>
+
+
+        <div class="mini-cards">
+
+            <button onclick="openLogin()">
+
+                👤
+
+                <span>
+                    Profile
+                </span>
+
+            </button>
+
+
+            <button onclick="openRecords()">
+
+                📋
+
+                <span>
+                    Records
+                </span>
+
+            </button>
+
+
+            <button onclick="openRecords()">
+
+                🔎
+
+                <span>
+                    Search
+                </span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 OurInfoVault • Demo Version
+    </p>
+
+</footer>
+
+
+<script>
+
+function openLogin() {
+
+    const username =
+        localStorage.getItem("ourInfoUser");
+
+    if (username) {
+
+        showLoginBox();
+
+    } else {
+
+        window.location.href = "register.html";
+
+    }
+
+}
+
+
+function showLoginBox() {
+
+    const username =
+        prompt("Enter your username:");
+
+    if (!username) {
+        return;
+    }
+
+
+    const password =
+        prompt("Enter your password:");
+
+    const savedUsername =
+        localStorage.getItem("ourInfoUser");
+
+    const savedPassword =
+        localStorage.getItem("ourInfoPassword");
+
+
+    if (
+        username === savedUsername &&
+        password === savedPassword
+    ) {
+
+        window.location.href =
+            "profile.html";
+
+    } else {
+
+        alert(
+            "❌ Wrong username or password"
+        );
+
+    }
+
+}
+
+
+function openRegister() {
+
+    window.location.href =
+        "register.html";
+
+}
+
+
+function openRecords() {
+
+    const username =
+        localStorage.getItem("ourInfoUser");
+
+    if (username) {
+
+        window.location.href =
+            "records.html";
+
+    } else {
+
+        window.location.href =
+            "register.html";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
+```

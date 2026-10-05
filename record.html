@@ -1,0 +1,174 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OurInfoVault - Records</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f7fb;
+            color: #222;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin-bottom: 8px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .search {
+            width: 100%;
+            padding: 14px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .records {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .record {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .record h2 {
+            margin-bottom: 12px;
+        }
+
+        .record p {
+            margin: 8px 0;
+            color: #555;
+        }
+
+        .record button {
+            margin-top: 12px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 7px;
+            background: #2563eb;
+            color: white;
+            cursor: pointer;
+        }
+
+        .no-result {
+            display: none;
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>OurInfoVault</h1>
+    <p>Personal Records</p>
+</header>
+
+<div class="container">
+
+    <input
+        type="text"
+        id="search"
+        class="search"
+        placeholder="Search records..."
+        onkeyup="searchRecords()"
+    >
+
+    <div class="records" id="records">
+
+        <div class="record">
+            <h2>Navneet</h2>
+            <p><b>Country:</b> India</p>
+            <p><b>Work:</b> Student</p>
+            <p><b>Email:</b> navneet@example.com</p>
+            <button onclick="viewRecord('Navneet')">View Details</button>
+        </div>
+
+        <div class="record">
+            <h2>Sukhvir</h2>
+            <p><b>Country:</b> India</p>
+            <p><b>Work:</b> Developer</p>
+            <p><b>Email:</b> sukhvir@example.com</p>
+            <button onclick="viewRecord('Sukhvir')">View Details</button>
+        </div>
+
+        <div class="record">
+            <h2>Hridesh</h2>
+            <p><b>Country:</b> India</p>
+            <p><b>Work:</b> Student</p>
+            <p><b>Email:</b> hridesh@example.com</p>
+            <button onclick="viewRecord('Hridesh')">View Details</button>
+        </div>
+
+    </div>
+
+    <div id="noResult" class="no-result">
+        No records found.
+    </div>
+
+</div>
+
+<script>
+
+function searchRecords() {
+
+    let search = document
+        .getElementById("search")
+        .value
+        .toLowerCase();
+
+    let records = document.querySelectorAll(".record");
+    let found = 0;
+
+    records.forEach(function(record) {
+
+        if (record.innerText.toLowerCase().includes(search)) {
+            record.style.display = "block";
+            found++;
+        } else {
+            record.style.display = "none";
+        }
+
+    });
+
+    document.getElementById("noResult").style.display =
+        found === 0 ? "block" : "none";
+}
+
+function viewRecord(name) {
+    alert("Opening record: " + name);
+}
+
+</script>
+
+</body>
+</html>
+```

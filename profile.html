@@ -1,0 +1,333 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Profile - OurInfoVault</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="logo">
+
+        <div class="logo-icon">
+            👤
+        </div>
+
+        <div>
+            <h2>OurInfoVault</h2>
+            <span>My Profile</span>
+        </div>
+
+    </div>
+
+</header>
+
+
+<main class="profile-page">
+
+    <div class="profile-header">
+
+        <div class="profile-avatar">
+            👤
+        </div>
+
+        <div>
+            <div class="badge">
+                ✦ PROFILE
+            </div>
+
+            <h1 id="welcomeName">
+                Welcome
+            </h1>
+
+            <p>
+                Your personal information dashboard
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="info-grid">
+
+        <div class="info-card">
+            <span>👤 Full Name</span>
+            <strong id="fullName">Not added</strong>
+        </div>
+
+
+        <div class="info-card">
+            <span>🌍 Country</span>
+            <strong id="country">Not added</strong>
+        </div>
+
+
+        <div class="info-card">
+            <span>💼 Work</span>
+            <strong id="work">Not added</strong>
+        </div>
+
+
+        <div class="info-card">
+            <span>📧 Email</span>
+            <strong id="email">Not added</strong>
+        </div>
+
+
+        <div class="info-card">
+            <span>📱 Mobile</span>
+            <strong id="mobile">Not added</strong>
+        </div>
+
+
+        <div class="info-card">
+            <span>📸 Instagram</span>
+            <strong id="instagram">Not added</strong>
+        </div>
+
+    </div>
+
+
+    <div class="notes-card">
+
+        <h2>📝 Notes</h2>
+
+        <p id="notes">
+            No notes added yet.
+        </p>
+
+    </div>
+
+
+    <div class="profile-actions">
+
+        <button
+            class="primary"
+            onclick="editInfo()"
+        >
+            ✏️ Edit Information
+        </button>
+
+
+        <button
+            class="secondary"
+            onclick="logout()"
+        >
+            🚪 Logout
+        </button>
+
+    </div>
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 OurInfoVault • Demo Version
+    </p>
+
+</footer>
+
+
+<script>
+
+const username =
+    localStorage.getItem("ourInfoUser");
+
+
+if (!username) {
+
+    window.location.href =
+        "index.html";
+
+}
+
+
+document.getElementById("welcomeName")
+    .textContent =
+    "Welcome, " + username;
+
+
+function getInfo(key) {
+
+    return localStorage.getItem(key)
+        || "Not added";
+
+}
+
+
+document.getElementById("fullName")
+    .textContent =
+    getInfo("fullName");
+
+
+document.getElementById("country")
+    .textContent =
+    getInfo("country");
+
+
+document.getElementById("work")
+    .textContent =
+    getInfo("work");
+
+
+document.getElementById("email")
+    .textContent =
+    getInfo("email");
+
+
+document.getElementById("mobile")
+    .textContent =
+    getInfo("mobile");
+
+
+document.getElementById("instagram")
+    .textContent =
+    getInfo("instagram");
+
+
+document.getElementById("notes")
+    .textContent =
+    getInfo("notes");
+
+
+function editInfo() {
+
+    const name =
+        prompt(
+            "Full Name:",
+            getInfo("fullName") === "Not added"
+                ? ""
+                : getInfo("fullName")
+        );
+
+    if (name !== null)
+        localStorage.setItem(
+            "fullName",
+            name
+        );
+
+
+    const country =
+        prompt(
+            "Country:",
+            getInfo("country") === "Not added"
+                ? ""
+                : getInfo("country")
+        );
+
+    if (country !== null)
+        localStorage.setItem(
+            "country",
+            country
+        );
+
+
+    const work =
+        prompt(
+            "Work:",
+            getInfo("work") === "Not added"
+                ? ""
+                : getInfo("work")
+        );
+
+    if (work !== null)
+        localStorage.setItem(
+            "work",
+            work
+        );
+
+
+    const email =
+        prompt(
+            "Email:",
+            getInfo("email") === "Not added"
+                ? ""
+                : getInfo("email")
+        );
+
+    if (email !== null)
+        localStorage.setItem(
+            "email",
+            email
+        );
+
+
+    const mobile =
+        prompt(
+            "Mobile:",
+            getInfo("mobile") === "Not added"
+                ? ""
+                : getInfo("mobile")
+        );
+
+    if (mobile !== null)
+        localStorage.setItem(
+            "mobile",
+            mobile
+        );
+
+
+    const instagram =
+        prompt(
+            "Instagram:",
+            getInfo("instagram") === "Not added"
+                ? ""
+                : getInfo("instagram")
+        );
+
+    if (instagram !== null)
+        localStorage.setItem(
+            "instagram",
+            instagram
+        );
+
+
+    const notes =
+        prompt(
+            "Notes:",
+            getInfo("notes") === "Not added"
+                ? ""
+                : getInfo("notes")
+        );
+
+    if (notes !== null)
+        localStorage.setItem(
+            "notes",
+            notes
+        );
+
+
+    location.reload();
+
+}
+
+
+function logout() {
+
+    localStorage.removeItem(
+        "ourInfoUser"
+    );
+
+    localStorage.removeItem(
+        "ourInfoPassword"
+    );
+
+    window.location.href =
+        "index.html";
+
+}
+
+</script>
+
+</body>
+</html>
+```
